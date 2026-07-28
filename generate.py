@@ -7,6 +7,7 @@ content: python3 generate.py
 import json, os, html
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+ASSET_V = "3"   # bump to cache-bust css/js after edits
 DATA = json.load(open(os.path.join(ROOT, "data", "content.json"), encoding="utf8"))
 P = DATA["projects"]; TEAM = DATA["team"]; J = DATA["journal"]
 BRAND = DATA["brand"]["wordmark"]; LEGAL = DATA["brand"]["legal"]
@@ -23,7 +24,7 @@ def head(title, rel, desc="Imagify is a visual studio working across identity, i
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
-<link rel="stylesheet" href="{rel}css/style.css">
+<link rel="stylesheet" href="{rel}css/style.css?v={ASSET_V}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26' font-family='Times New Roman'>I</text></svg>">
 </head>
 <body>
@@ -63,7 +64,7 @@ def view_toggle():
 """
 
 def tail(rel):
-    return f'<script src="{rel}js/main.js"></script>\n</body>\n</html>\n'
+    return f'<script src="{rel}js/main.js?v={ASSET_V}"></script>\n</body>\n</html>\n'
 
 # ---------------------------------------------------------------- browser component
 
@@ -157,15 +158,15 @@ def build_detail(i, pr):
         <span class="tz"><img src="{rel}assets/img/{next_pr['slug']}-hero.jpg" alt="" loading="lazy"></span>
         <span class="nx">Next</span>
       </a>
+      <nav class="detail-pagenav mono">
+        <a href="{rel}projects/{prev_pr['slug']}.html">Previous</a>
+        <a href="{rel}projects.html">View all projects</a>
+        <a href="{rel}projects/{next_pr['slug']}.html">Next</a>
+      </nav>
     </div>
     <figure class="detail-hero appear-fade">
       <img src="{rel}assets/img/{pr['slug']}-hero.jpg" alt="{esc(pr['title'])} — {esc(pr['client'])}">
     </figure>
-    <nav class="detail-pagenav mono">
-      <a href="{rel}projects/{prev_pr['slug']}.html">Previous</a>
-      <a href="{rel}projects.html">View all projects</a>
-      <a class="to-right" href="{rel}projects/{next_pr['slug']}.html">Next</a>
-    </nav>
   </section>
   <section class="detail-duo">
     <figure><img src="{rel}assets/img/{pr['slug']}-a.jpg" alt="" loading="lazy"></figure>

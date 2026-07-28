@@ -152,4 +152,6 @@
       a.addEventListener("click", function () { navBox.checked = false; });
     });
   }
+
+  window.IMAGIFY = { ready: true, hasToggle: !!toggle, hasBrowser: !!browser };
 })();
