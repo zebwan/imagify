@@ -1,0 +1,92 @@
+{
+  "brand": {
+    "name": "Imagify",
+    "wordmark": "Imagify",
+    "legal": "Imagify®",
+    "tagline": "Visual studio"
+  },
+  "projects": [
+    {"slug": "halcyon", "client": "Halcyon", "title": "Quiet Rooms", "service": "Editorial", "year": "2026", "column": 0,
+     "desc": "For the Quiet Rooms issue we photographed empty hotel interiors at dawn and let the furniture carry the story, and the pages were set with wide margins so each frame could breathe, and the palette stayed close to plaster, oak and morning haze while short captions ran beneath the images like handwritten notes, giving the whole editorial the pace of a slow walk through corridors that had not yet decided to wake up."},
+    {"slug": "vermeer", "client": "Vermeer & Co", "title": "Paper Light", "service": "Photography", "year": "2026", "column": 0,
+     "desc": "Paper Light was shot entirely with sheets of translucent paper as the only light modifiers, and the studies moved from hard folds to soft gradients as the day went on, and the series kept a single fixed camera position so the paper itself became the performer, bending, tearing and glowing, while the prints were finished matte so the highlights would sit quietly instead of shining."},
+    {"slug": "northwind", "client": "Northwind", "title": "Salt Air", "service": "Creative Direction", "year": "2026", "column": 0,
+     "desc": "Salt Air set the direction for a coastal outerwear line, and we built the visual world around wind rather than water, letting fabric, hair and grass all lean the same way in every frame, and the campaign grammar used long horizons with the subject placed low, so the clothing read as shelter inside weather, and every touchpoint from lookbook to signage kept that same leaning horizon."},
+    {"slug": "blocnine", "client": "Bloc Nine", "title": "Neon Harvest", "service": "Campaign", "year": "2026", "column": 0,
+     "desc": "Neon Harvest paired farm produce with electric colour for a food brand that wanted to feel awake, and we staged vegetables like sculpture under saturated gel lighting, keeping compositions frontal and symmetrical so the strangeness came only from colour, and the campaign rolled out as posters, short loops and shelf wobblers that all shared the same three-colour discipline."},
+    {"slug": "aurelia", "client": "Aurelia", "title": "Slow Bloom", "service": "Advertising", "year": "2026", "column": 0,
+     "desc": "Slow Bloom advertised a fragrance by refusing to hurry, and the films held single flowers opening in near real time while the product appeared only in the final second, and the stills used the same patience, printed large with almost nothing on the page, and the media plan placed the work in waiting rooms, platforms and lobbies, exactly where people had time to watch something bloom."},
+    {"slug": "meridian", "client": "Meridian", "title": "Glass Season", "service": "Design", "year": "2026", "column": 1,
+     "desc": "Glass Season was a design programme for a glassware maker, and we rebuilt the catalogue system around refraction, letting each object distort a coloured field behind it so the products drew their own portraits, and the typography stayed small and factual beneath these distortions, and the system carried through packaging, fair stands and a slim annual publication."},
+    {"slug": "fjord", "client": "Fjord", "title": "Cold Light", "service": "Art Direction", "year": "2026", "column": 1,
+     "desc": "Cold Light art-directed a winter sports series in the far north, and we kept the sun below the mountains for every shoot so the whole story lived in blue shadow, and gear and athletes were photographed with the same distant respect, small against the terrain, and the grade pulled all warmth out except one orange accent that travelled through the series like a signal."},
+    {"slug": "paloma", "client": "Paloma", "title": "Street Chorus", "service": "Photography", "year": "2025", "column": 1,
+     "desc": "Street Chorus followed a dance company through their own city, and instead of stages we shot rehearsals in crossings, markets and underpasses, letting passers-by drift through frame, and the photography leaned on long lenses and found light so the dancers stayed inside the life of the street rather than on top of it, and the final selection ran as a broadsheet insert."},
+    {"slug": "vantage", "client": "Vantage", "title": "Static Bloom", "service": "Campaign", "year": "2025", "column": 1,
+     "desc": "Static Bloom launched a speaker line by photographing sound, and we drove fine powder, petals and thread with low frequencies until each frame caught a bloom of movement at its peak, and the campaign kept the product silent at the edge of the image while its effect filled the centre, and the headline system used only verbs, set small, in mono."},
+    {"slug": "terrafirma", "client": "Terra Firma", "title": "Clay Studies", "service": "Product Design", "year": "2025", "column": 1,
+     "desc": "Clay Studies was a product development diary for a ceramics workshop, and we documented every failed glaze and slumped form alongside the successes, numbering all of them equally, and the honesty became the identity, with the final range presented next to its own rejects, and the launch publication printed the whole sequence uncut so buyers could see the path."},
+    {"slug": "odessa", "client": "Odessa", "title": "Red Interval", "service": "Editorial", "year": "2025", "column": 2,
+     "desc": "Red Interval was a colour-themed editorial where every spread had to earn its single red element, and we built each story around waiting, queues, platforms and pauses, with red arriving as a coat, a door or a signal lamp, and the type sat in the intervals between images, and the issue closed with the only fully red spread, printed on uncoated stock."},
+    {"slug": "marrow", "client": "Marrow", "title": "Bone China", "service": "Identity", "year": "2025", "column": 2,
+     "desc": "Bone China was an identity for a small porcelain house, and we drew the mark from the thinnest point of their cups, a line that almost disappears against light, and the system used that near-absence everywhere, hairline rules, pale embossing and photography shot against white so the objects had to define themselves by shadow alone, and the effect made thinness itself the brand."},
+    {"slug": "lumen", "client": "Lumen", "title": "After Hours", "service": "Photography", "year": "2025", "column": 2,
+     "desc": "After Hours photographed office buildings once everyone had gone, and the series treated cleaning trolleys, standby lights and abandoned chairs as still-life subjects, and every image used only the light the building itself left on, and the project ran as a book and a slow slideshow in the lobby of the very towers it documented, playing to empty escalators."},
+    {"slug": "ostgard", "client": "Ostgard", "title": "Field Notes", "service": "Personal", "year": "2025", "column": 2,
+     "desc": "Field Notes was a personal project made across one farming season, and it collected fences, tools, weather and hands in no particular order, printed at postcard size and posted weekly to a small list of subscribers, and nothing was retouched and nothing was explained, and by the last week the mailing list had grown large enough to fund the next season."},
+    {"slug": "galerienord", "client": "Galerie Nord", "title": "Open Storage", "service": "Catalogue", "year": "2024", "column": 2,
+     "desc": "Open Storage catalogued a museum depot rather than an exhibition, and we photographed crates, racking and wrapped sculptures exactly as found, and each object entry carried its storage code as the headline instead of a title, and the catalogue let readers feel the pleasure of the back room, where art waits in blankets, and the print run sold out before the show opened."},
+    {"slug": "atlasworks", "client": "Atlas Works", "title": "Iron Choir", "service": "Art Direction", "year": "2024", "column": 3,
+     "desc": "Iron Choir directed the imagery for a foundry's centenary, and we recorded the works as if they were an orchestra, brass pours, hammer sections and the long quiet of cooling halls, and the photographs were sequenced by loudness rather than chronology, and the anniversary book opened silent and closed at full roar, with the type growing a point size every chapter."},
+    {"slug": "cobalt", "client": "Cobalt", "title": "Deep Signal", "service": "Design", "year": "2024", "column": 3,
+     "desc": "Deep Signal designed the launch system for a sub-sea sensor company, and we translated their sonar returns into a graphic language of concentric fades, and the palette held to two blues and a warning orange, and everything from investor decks to hull decals came from the same wave grammar, and the system survived contact with engineering unchanged, which we count as the real result."},
+    {"slug": "ninefold", "client": "Ninefold", "title": "Small Rituals", "service": "Editorial", "year": "2024", "column": 3,
+     "desc": "Small Rituals was an editorial about the tiny repeated actions that hold a day together, and we photographed hands only, pouring, folding, locking, watering, across nine households, and the layouts gave each ritual a full silent spread, and the captions were gathered at the back so the sequence could run without interruption, like a film with the sound turned off."},
+    {"slug": "volt", "client": "Volt", "title": "Charged Air", "service": "Advertising", "year": "2024", "column": 3,
+     "desc": "Charged Air advertised an electric motorcycle without ever showing the road, and we shot the machines in storm light on open plains, letting sky and chassis trade reflections, and the copy ran to five words per execution, and the launch films were cut to the rhythm of distant thunder, and the whole campaign kept its promise of speed by never once moving the camera."},
+    {"slug": "sable", "client": "Sable", "title": "Dust Ballet", "service": "Film Direction", "year": "2024", "column": 3,
+     "desc": "Dust Ballet was a short film for a heritage denim house, and we choreographed riders, dust and low sun into a single continuous take, rehearsed for three days and shot at the fourth dusk, and the fabric was the lead actor, catching light through the haze, and the film ran in one cinema for one week, which was the whole strategy, and the queue did the advertising."}
+  ],
+  "team": [
+    {"first": "Noa", "last": "Lindqvist", "role": "Creative Director"},
+    {"first": "Emil", "last": "Varga", "role": "Brand Designer"},
+    {"first": "Suki", "last": "Tanaka", "role": "Producer"},
+    {"first": "Ines", "last": "Duarte", "role": "Motion Designer"},
+    {"first": "Theo", "last": "Marchetti", "role": "Art Director"},
+    {"first": "Wren", "last": "Okafor", "role": "Graphic Designer"},
+    {"first": "Aida", "last": "Rahmani", "role": "Photographer"},
+    {"first": "Casper", "last": "Holm", "role": "Film Director"}
+  ],
+  "studio": {
+    "heading": "The Studio",
+    "statement": "Imagify is a visual studio working across identity, image and film. We like briefs with edges, budgets with honesty and rooms with daylight. Most of our projects begin as a conversation about what a brand refuses to do, because the refusals draw the shape faster than the wishes, and from that outline we build systems that stay calm in use and sharp in memory. The studio is small on purpose. Everyone who starts a project finishes it, and the person who presents the work is the person who made it.",
+    "services": ["Branding", "Art Direction", "Editorial", "Photography", "Campaigns", "Design", "Film"]
+  },
+  "journal": [
+    {"category": "Photography", "title": "Two Hours of Fog on the Harbour Shoot"},
+    {"category": "Campaign", "title": "The Billboard Nobody Approved"},
+    {"category": "Editorial", "title": "Printing at Midnight, Again"},
+    {"category": "Design", "title": "A Grid That Refused to Behave"},
+    {"category": "Art Direction", "title": "Borrowed Chairs and Hard Light"},
+    {"category": "Identity", "title": "The Logo We Almost Shipped"},
+    {"category": "Advertising", "title": "Selling Rain to a Sunny City"},
+    {"category": "Product Design", "title": "Notes From the Clay Room"},
+    {"category": "Creative Direction", "title": "What the Client Said in the Lift"},
+    {"category": "Film Direction", "title": "Fourteen Takes of One Slow Door"},
+    {"category": "Catalogue", "title": "Numbering Three Hundred Objects"},
+    {"category": "Photography", "title": "The Last Roll in the Fridge"}
+  ],
+  "contact": {
+    "studio": "Imagify Studio",
+    "address1": "28 Rivington Street",
+    "address2": "London EC2A, United Kingdom",
+    "email": "hello@imagify.studio",
+    "socials": ["Instagram", "Behance", "X.com", "LinkedIn"]
+  },
+  "footer": [
+    {"label": "Made by Imagify Studio", "href": "#"},
+    {"label": "An Imagify® mockup", "href": "#"},
+    {"label": "Images via Unsplash", "href": "https://unsplash.com"},
+    {"label": "Privacy Policy", "href": "#"}
+  ]
+}
