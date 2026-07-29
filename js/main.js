@@ -63,29 +63,69 @@
     window.addEventListener("resize", function () { measure(); schedule(); });
 
     if (opts.endless) {
+      function atPageEnd() {
+        return window.scrollY >=
+          document.documentElement.scrollHeight - window.innerHeight - 2;
+      }
+
       window.addEventListener("wheel", function (e) {
-        if (section.dataset.mode === "list") return;
-        var max = document.documentElement.scrollHeight - window.innerHeight;
-        var atEnd = window.scrollY >= max - 2;
-        if (atEnd && e.deltaY > 0) {
-          extra += e.deltaY;
-          e.preventDefault();
-          schedule();
-        } else if (atEnd && e.deltaY < 0 && extra > 0) {
+        if (section.dataset.mode === "list" || !atPageEnd()) return;
+        if (e.deltaY > 0 || extra > 0) {
           extra = Math.max(0, extra + e.deltaY);
           e.preventDefault();
           schedule();
         }
       }, { passive: false });
+
+      /* touch: keep the columns spinning past the page end (phones fire no
+         wheel events), with a small momentum tail after the finger lifts */
+      var touchY = null, vel = 0, momentumRaf = null;
+      function stopMomentum() {
+        if (momentumRaf) { cancelAnimationFrame(momentumRaf); momentumRaf = null; }
+      }
+      function momentum() {
+        momentumRaf = null;
+        vel *= 0.94;
+        if (Math.abs(vel) < 0.4 || (vel < 0 && extra <= 0)) { vel = 0; return; }
+        extra = Math.max(0, extra + vel);
+        schedule();
+        momentumRaf = requestAnimationFrame(momentum);
+      }
+      window.addEventListener("touchstart", function (e) {
+        stopMomentum();
+        touchY = e.touches[0].clientY;
+        vel = 0;
+      }, { passive: true });
+      window.addEventListener("touchmove", function (e) {
+        if (touchY === null || section.dataset.mode === "list") return;
+        var y = e.touches[0].clientY;
+        var dy = touchY - y;            /* >0 = finger up = scroll down */
+        touchY = y;
+        if (!atPageEnd()) return;
+        if (dy > 0 || extra > 0) {
+          extra = Math.max(0, extra + dy);
+          vel = dy;
+          if (e.cancelable) e.preventDefault();
+          schedule();
+        }
+      }, { passive: false });
+      window.addEventListener("touchend", function () {
+        touchY = null;
+        if (extra > 0 && Math.abs(vel) > 1) momentum();
+      }, { passive: true });
     }
 
     schedule();
-    return { schedule: schedule };
+    return {
+      schedule: schedule,
+      getExtra: function () { return extra; }
+    };
   }
 
   var browser = document.querySelector("[data-browser]");
+  var browserBelts = null;
   if (browser && !prefersReduced) {
-    initBelts(browser, {
+    browserBelts = initBelts(browser, {
       speed: 0.55,
       endless: browser.dataset.endless === "true",
       offsets: [-140, -560, -60, -660]
@@ -153,5 +193,10 @@
     });
   }
 
-  window.IMAGIFY = { ready: true, hasToggle: !!toggle, hasBrowser: !!browser };
+  window.IMAGIFY = {
+    ready: true,
+    hasToggle: !!toggle,
+    hasBrowser: !!browser,
+    belts: browserBelts
+  };
 })();

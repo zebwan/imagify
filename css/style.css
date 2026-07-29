@@ -46,6 +46,8 @@ body {
   background: var(--bg);
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
   animation: page-in 0.45s ease both;
 }
 @keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
@@ -225,6 +227,7 @@ ul { list-style: none; }
 
 .hero {
   position: relative;
+  height: 100vh;
   height: 100svh;
   display: grid;
   place-items: center;
@@ -249,11 +252,18 @@ ul { list-style: none; }
 
 .browser {
   position: relative;
-  height: 100svh;
-  overflow: hidden;
   scroll-snap-align: start;
 }
-.browser.standalone { height: auto; min-height: 100svh; overflow: visible; }
+.browser[data-mode="grid"] {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+.browser[data-mode="list"] {
+  height: auto;
+  min-height: 100svh;
+  overflow: visible;
+}
 
 /* grid mode: 4 ticker columns */
 .ticker-wrap {
@@ -263,6 +273,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--gap);
+  overflow: hidden; /* keeps the tall belts from inflating page height in list mode */
   transition: opacity 0.4s ease, transform 0.4s var(--ease-appear);
 }
 .browser[data-mode="list"] .ticker-wrap {
@@ -308,8 +319,13 @@ ul { list-style: none; }
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
-.browser[data-mode="list"] .list-table { opacity: 1; pointer-events: auto; }
-.browser.standalone .list-table { position: static; padding-top: 160px; opacity: 1; pointer-events: auto; }
+.browser[data-mode="list"] .list-table {
+  position: static;
+  overflow: visible;
+  padding-top: 160px;
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .trow, .thead {
   display: grid;
@@ -653,7 +669,8 @@ ul { list-style: none; }
   .ticker-wrap { grid-template-columns: repeat(2, 1fr); }
   .ticker-col:nth-child(3), .ticker-col:nth-child(4) { display: none; }
 
-  .list-table { padding-top: 120px; }
+  .list-table,
+  .browser[data-mode="list"] .list-table { padding-top: 120px; }
   .thead { grid-template-columns: 1fr auto; }
   .thead .h-project, .thead .h-services { display: none; }
   .trow { grid-template-columns: 1fr auto; }

@@ -7,7 +7,7 @@ content: python3 generate.py
 import json, os, html
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_V = "3"   # bump to cache-bust css/js after edits
+ASSET_V = "5"   # bump to cache-bust css/js after edits
 DATA = json.load(open(os.path.join(ROOT, "data", "content.json"), encoding="utf8"))
 P = DATA["projects"]; TEAM = DATA["team"]; J = DATA["journal"]
 BRAND = DATA["brand"]["wordmark"]; LEGAL = DATA["brand"]["legal"]
@@ -56,8 +56,8 @@ def footer(rel):
     cells = "\n".join(f'  <a class="mono" href="{esc(i["href"])}">{esc(i["label"])}</a>' for i in items)
     return f'<footer class="site-footer">\n{cells}\n</footer>\n'
 
-def view_toggle():
-    return """<button class="view-toggle appear-rise" data-view-toggle data-mode="grid" aria-label="Switch view">
+def view_toggle(default_mode="grid"):
+    return f"""<button class="view-toggle appear-rise" data-view-toggle data-mode="{default_mode}" aria-label="Switch view">
   <span class="labels mono"><span>Grid view</span><span>List view</span></span>
   <span class="ico grid"><i></i><i></i><i></i><i></i></span>
 </button>
@@ -68,7 +68,7 @@ def tail(rel):
 
 # ---------------------------------------------------------------- browser component
 
-def browser_component(rel, standalone=False):
+def browser_component(rel, default_mode="grid"):
     cols = {0: [], 1: [], 2: [], 3: []}
     for pr in P:
         cols[pr["column"]].append(pr)
@@ -100,9 +100,7 @@ def browser_component(rel, standalone=False):
         f'    <img class="row-img" data-for="{pr["slug"]}" src="{rel}assets/img/{pr["slug"]}-hero.jpg" alt="" loading="lazy">'
         for pr in P)
 
-    sa = " standalone" if standalone else ""
-    endless = "false" if standalone else "true"
-    return f"""<section class="browser{sa}" data-browser data-mode="grid" data-endless="{endless}">
+    return f"""<section class="browser" data-browser data-mode="{default_mode}" data-endless="true">
   <div class="ticker-wrap">
 {col_html}  </div>
   <div class="list-table" data-list-table>
@@ -127,15 +125,15 @@ def build_home():
   <p class="scroll-cue mono appear-fade">Scroll down</p>
 </header>
 """
-    out += browser_component("", standalone=False)
+    out += browser_component("", default_mode="grid")
     out += tail("")
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf8").write(out)
 
 def build_projects():
     out = head(f"Projects — {BRAND}", "")
     out += pill_nav("", "Projects")
-    out += view_toggle()
-    out += browser_component("", standalone=False)
+    out += view_toggle(default_mode="list")
+    out += browser_component("", default_mode="list")
     out += tail("")
     open(os.path.join(ROOT, "projects.html"), "w", encoding="utf8").write(out)
 
