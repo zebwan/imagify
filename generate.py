@@ -16,7 +16,7 @@ def esc(s): return html.escape(s, quote=True)
 
 # ---------------------------------------------------------------- chrome
 
-def head(title, rel, desc="Imagify is a visual studio working across identity, image and film.", snap=False):
+def head(title, rel, desc="Imagify is a visual studio in Kuala Lumpur working across identity, image and film.", snap=False):
     return f"""<!DOCTYPE html>
 <html lang="en"{' class="snap"' if snap else ''}>
 <head>
